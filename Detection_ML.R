@@ -1,3 +1,5 @@
+version
+
 # Replication of Breast Cancer Detection with KNN and SVM
 
 # Initialize environment
@@ -25,8 +27,6 @@ rm(rem)
 df$bare_nuclei <- as.integer(df$bare_nuclei)
 df$class <- as.factor(df$class)
 
-library(plyr)
-library(dplyr)
 df$class <- revalue(df$class, c("2"="benign", "4"="malignant"))
 table(df$class)
 
@@ -36,8 +36,6 @@ str(df)
 # Wisualize the dataset
 psych::describe(df)
 
-
-library(car)
 scatterplotMatrix(df,
                   diagonal="histogram",
                   smooth=FALSE)
